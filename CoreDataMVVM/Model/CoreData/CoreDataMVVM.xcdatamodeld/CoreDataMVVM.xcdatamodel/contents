@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Competition" representedClassName="Competition" syncable="YES">
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" maxValueString="30" syncable="YES"/>
+        <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participant" inverseName="competition" inverseEntity="Participant" syncable="YES"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="competition" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Participant" representedClassName="Participant" syncable="YES">
+        <attribute name="name" attributeType="String" maxValueString="20" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="competition" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Competition" inverseName="participants" inverseEntity="Competition" syncable="YES"/>
+        <relationship name="team" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="participant" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="capacity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" maxValueString="30" syncable="YES"/>
+        <relationship name="competition" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Competition" inverseName="teams" inverseEntity="Competition" syncable="YES"/>
+        <relationship name="participant" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participant" inverseName="team" inverseEntity="Participant" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Competition" positionX="403" positionY="-355" width="128" height="103"/>
+        <element name="Participant" positionX="79" positionY="-264" width="128" height="103"/>
+        <element name="Team" positionX="81" positionY="-441" width="128" height="118"/>
+    </elements>
+</model>
