@@ -11,7 +11,7 @@ import CoreData
 
 extension CoreDataManager {
     
-    func addParticipant(name: String, photoURL: String? = nil, success: (Participant) -> (), failed: (NSError?) -> ()) {
+    func addParticipant(name: String, photoURL: String? = nil, success: (Participant) -> (), failed: (NSError) -> ()) {
         let context = persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: Participant.className, in: context) else {
             failed(NSError.noEntity)
@@ -27,6 +27,7 @@ extension CoreDataManager {
             success(user)
         }
         catch let error as NSError {
+            context.delete(user)
             failed(error)
         }
     }

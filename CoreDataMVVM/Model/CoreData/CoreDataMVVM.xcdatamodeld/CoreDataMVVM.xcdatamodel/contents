@@ -11,6 +11,11 @@
         <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="competition" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Competition" inverseName="participants" inverseEntity="Competition" syncable="YES"/>
         <relationship name="team" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="participant" inverseEntity="Team" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Team" representedClassName="Team" syncable="YES">
         <attribute name="capacity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -21,7 +26,7 @@
     </entity>
     <elements>
         <element name="Competition" positionX="403" positionY="-355" width="128" height="103"/>
-        <element name="Participant" positionX="79" positionY="-264" width="128" height="103"/>
+        <element name="Participant" positionX="79" positionY="-264" width="128" height="105"/>
         <element name="Team" positionX="81" positionY="-441" width="128" height="118"/>
     </elements>
 </model>

@@ -18,13 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-//        CoreDataManager.shared.allUsers(success: { (people) in
-//            for var participant in people {
-//                print("Found \(participant.name)")
-//            }
+//        CoreDataManager.shared.addParticipant(name: "James", success: { (participant) in
+//            print("Added \(participant.name)")
 //        }) { (error) in
-//            print(error?.localizedDescription ?? "")
+//            print("Error: \(error.localizedDescription) + info: \(error.userInfo)")
 //        }
+//        
+//        CoreDataManager.shared.addParticipant(name: "Bobby", success: { (participant) in
+//            print("Added \(participant.name)")
+//        }) { (error) in
+//            print("Error: \(error.localizedDescription) + info: \(error.userInfo)")
+//        }
+        
+        print("All users:")
+        CoreDataManager.shared.allUsers(success: { (people) in
+            for var participant in people {
+                print("Found \(participant.name)")
+            }
+        }) { (error) in
+            print(error?.localizedDescription ?? "Something went wrong")
+        }
         
         return true
     }
