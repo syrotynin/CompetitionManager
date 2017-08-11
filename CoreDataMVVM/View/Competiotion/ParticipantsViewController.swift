@@ -13,6 +13,8 @@ class ParticipantsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var selectedNames: UILabel!
+    @IBOutlet weak var namesHeight: NSLayoutConstraint!
     
     let viewModel = ParticipantsViewModel()
     
@@ -23,7 +25,7 @@ class ParticipantsViewController: UIViewController {
     
     func bindViewModel() {
         
-        viewModel.searchString.bidirectionalBind(to:searchField.reactive.text)
+        viewModel.searchString.bidirectionalBind(to: searchField.reactive.text)
         
         viewModel.searchResults.bind(to: tableView) { dataSource, indexPath, tableView in
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
@@ -47,6 +49,11 @@ class ParticipantsViewController: UIViewController {
             
             return cell
         }
+
+        // TODO: bind selected to selectedNames label
+//        viewModel.searchResults
+//            .map {$0.name ?? ""}
+//            .bind(to: selectedNames.reactive.text)
         
         _ = viewModel.errorMessages.observeNext {
             [unowned self] error in

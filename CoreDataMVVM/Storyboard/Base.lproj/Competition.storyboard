@@ -95,15 +95,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJu-NO-bPw">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernames" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i06-wE-vWI">
+                                        <rect key="frame" x="20" y="8" width="335" height="24"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="i06-wE-vWI" secondAttribute="trailing" constant="20" id="55H-0k-88P"/>
+                                    <constraint firstAttribute="bottom" secondItem="i06-wE-vWI" secondAttribute="bottom" constant="8" id="VYv-UO-XcQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="eyq-61-lsP"/>
+                                    <constraint firstItem="i06-wE-vWI" firstAttribute="leading" secondItem="OJu-NO-bPw" secondAttribute="leading" constant="20" id="in6-UQ-ZAw"/>
+                                    <constraint firstItem="i06-wE-vWI" firstAttribute="top" secondItem="OJu-NO-bPw" secondAttribute="top" constant="8" id="mUm-la-N1v"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vxl-cD-ccl">
-                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="80" id="hWM-t0-U4f" customClass="UserTableViewCell" customModule="CoreDataMVVM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hWM-t0-U4f" id="IAa-0E-rSN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userDefault" translatesAutoresizingMaskIntoConstraints="NO" id="om7-s3-odZ">
@@ -147,11 +166,14 @@
                             <constraint firstAttribute="trailing" secondItem="F2n-In-RdG" secondAttribute="trailing" constant="20" id="E90-hA-yUh"/>
                             <constraint firstAttribute="trailing" secondItem="Vxl-cD-ccl" secondAttribute="trailing" id="Lth-lO-LyS"/>
                             <constraint firstItem="Vxl-cD-ccl" firstAttribute="leading" secondItem="cyq-if-UW6" secondAttribute="leading" id="Sm6-03-Trd"/>
-                            <constraint firstItem="0Ot-Qq-S1h" firstAttribute="top" secondItem="Vxl-cD-ccl" secondAttribute="bottom" id="fBu-Lp-SeM"/>
+                            <constraint firstItem="OJu-NO-bPw" firstAttribute="top" secondItem="Vxl-cD-ccl" secondAttribute="bottom" id="Ueg-VR-FVk"/>
+                            <constraint firstAttribute="trailing" secondItem="OJu-NO-bPw" secondAttribute="trailing" id="Ylj-Sb-SIf"/>
+                            <constraint firstItem="0Ot-Qq-S1h" firstAttribute="top" secondItem="OJu-NO-bPw" secondAttribute="bottom" id="ir1-o2-6Wc"/>
                             <constraint firstItem="F2n-In-RdG" firstAttribute="leading" secondItem="cyq-if-UW6" secondAttribute="leading" constant="20" id="lIG-57-dfP"/>
                             <constraint firstItem="Vxl-cD-ccl" firstAttribute="top" secondItem="F2n-In-RdG" secondAttribute="bottom" constant="8" id="lyy-7t-SF6"/>
                             <constraint firstItem="Vxl-cD-ccl" firstAttribute="width" secondItem="cyq-if-UW6" secondAttribute="width" id="o50-NP-sV8"/>
                             <constraint firstItem="F2n-In-RdG" firstAttribute="top" secondItem="upo-gP-HGa" secondAttribute="bottom" constant="8" id="u0s-Fd-BZM"/>
+                            <constraint firstItem="OJu-NO-bPw" firstAttribute="leading" secondItem="cyq-if-UW6" secondAttribute="leading" id="u88-RG-nGj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select participants" id="HJy-9D-ild">
@@ -163,13 +185,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="LeJ-VX-s1w" id="69H-do-o6Y"/>
+                        <outlet property="namesHeight" destination="eyq-61-lsP" id="82l-1g-XjQ"/>
                         <outlet property="searchField" destination="F2n-In-RdG" id="pyv-fr-JDb"/>
+                        <outlet property="selectedNames" destination="i06-wE-vWI" id="enI-u3-XE6"/>
                         <outlet property="tableView" destination="Vxl-cD-ccl" id="vO0-jw-OuX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUt-cN-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="-561"/>
+            <point key="canvasLocation" x="1916" y="-561.76911544227892"/>
         </scene>
         <!--New Competition-->
         <scene sceneID="mXo-JW-zZ0">
