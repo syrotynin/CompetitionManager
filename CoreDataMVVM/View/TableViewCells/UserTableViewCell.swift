@@ -1,14 +1,14 @@
 //
-//  CompetitionTableViewCell.swift
+//  UserTableViewCell.swift
 //  CoreDataMVVM
 //
-//  Created by Serhii Syrotynin on 7/14/17.
+//  Created by Serhii Syrotynin on 8/11/17.
 //  Copyright © 2017 Serhii Syrotynin. All rights reserved.
 //
 
 import UIKit
 
-class CompetitionTableViewCell: UITableViewCell {
+class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var name: UILabel!

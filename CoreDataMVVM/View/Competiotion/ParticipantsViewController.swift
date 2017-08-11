@@ -14,7 +14,7 @@ class ParticipantsViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
-    var viewModel: ParticipantsViewModel?
+    let viewModel = ParticipantsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,41 @@ class ParticipantsViewController: UIViewController {
     }
     
     func bindViewModel() {
-        guard let viewModel = viewModel else {
-            return
+        
+        viewModel.searchString.bidirectionalBind(to:searchField.reactive.text)
+        
+        viewModel.searchResults.bind(to: tableView) { dataSource, indexPath, tableView in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserTableViewCell
+            let participant = dataSource[indexPath.row]
+            cell.name.text = participant.name
+            
+            // load track image
+//            let backgroundQueue = DispatchQueue(label: "backgroundQueue",
+//                                                qos: .background,
+//                                                attributes: .concurrent,
+//                                                autoreleaseFrequency: .inherit,
+//                                                target: nil)
+//            cell.photo.image = nil
+//            backgroundQueue.async {
+//                if let imageData = try? Data(contentsOf: track.url) {
+//                    DispatchQueue.main.async() {
+//                        cell.photo.image = UIImage(data: imageData)
+//                    }
+//                }
+//            }
+            
+            return cell
         }
         
-        
+        _ = viewModel.errorMessages.observeNext {
+            [unowned self] error in
+            
+            let alertController = UIAlertController(title: "Something went wrong :-(", message: error, preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            let actionOk = UIAlertAction(title: "OK", style: .default,
+                                         handler: { action in alertController.dismiss(animated: true, completion: nil) })
+            
+            alertController.addAction(actionOk)
+        }
     }
 }

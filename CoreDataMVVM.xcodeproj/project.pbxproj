@@ -31,6 +31,7 @@
 		E83978C01F19240D00A2E4DC /* NSError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978BF1F19240D00A2E4DC /* NSError+Extensions.swift */; };
 		E83978C21F1925CD00A2E4DC /* CoreDataManager+Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978C11F1925CD00A2E4DC /* CoreDataManager+Participant.swift */; };
 		E83978C51F192D1B00A2E4DC /* ParticipantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978C41F192D1B00A2E4DC /* ParticipantsViewModel.swift */; };
+		E89147541F3E157900A7E717 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89147531F3E157900A7E717 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E83978BF1F19240D00A2E4DC /* NSError+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Extensions.swift"; sourceTree = "<group>"; };
 		E83978C11F1925CD00A2E4DC /* CoreDataManager+Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Participant.swift"; sourceTree = "<group>"; };
 		E83978C41F192D1B00A2E4DC /* ParticipantsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsViewModel.swift; sourceTree = "<group>"; };
+		E89147531F3E157900A7E717 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		F7FE232FFE91925AFE875901 /* Pods-CoreDataMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataMVVM/Pods-CoreDataMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				E83978531F18FB3200A2E4DC /* CompetitionTableViewCell.swift */,
+				E89147531F3E157900A7E717 /* UserTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				E83978C01F19240D00A2E4DC /* NSError+Extensions.swift in Sources */,
 				E83978C51F192D1B00A2E4DC /* ParticipantsViewModel.swift in Sources */,
 				E83978C21F1925CD00A2E4DC /* CoreDataManager+Participant.swift in Sources */,
+				E89147541F3E157900A7E717 /* UserTableViewCell.swift in Sources */,
 				E83978A41F1907A500A2E4DC /* Competition+CoreDataClass.swift in Sources */,
 				E83978A71F1907A500A2E4DC /* Participant+CoreDataProperties.swift in Sources */,
 				E83978A91F1907A500A2E4DC /* Team+CoreDataProperties.swift in Sources */,

@@ -12,4 +12,8 @@ extension NSError {
     public static var noEntity: NSError {
         return NSError(domain: "Unable to get entity description", code: 0, userInfo: nil)
     }
+    
+    public static var noError: NSError {
+        return NSError(domain: "No error. Something went wrong", code: 0, userInfo: nil)
+    }
 }

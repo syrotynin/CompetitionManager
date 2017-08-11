@@ -11,12 +11,9 @@ import CoreData
 
 extension CoreDataManager {
     
-    func addCompetition(name: String, participants: NSSet? = nil, imageURL: String? = nil, success: (Competition) -> (), failed: (NSError?) -> ()) {
+    func addCompetition(name: String, participants: NSSet? = nil, imageURL: String? = nil, success: (Competition) -> (), failed: (NSError) -> ()) {
         let context = persistentContainer.viewContext
-        guard let entity = NSEntityDescription.entity(forEntityName: Competition.className, in: context) else {
-            failed(NSError.noEntity)
-            return
-        }
+        let entity = CoreDataManager.shared.entityForName(entityName: Competition.className)
         
         let competition = Competition(entity: entity, insertInto: context)
         competition.name = name

@@ -15,6 +15,17 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     private init(){}
     
+    // MARK: - Core Data stack
+    
+    lazy var applicationDocumentsDirectory: URL = {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return urls[urls.count-1]
+    }()
+    
+    func entityForName(entityName: String) -> NSEntityDescription {
+        return NSEntityDescription.entity(forEntityName: entityName, in: persistentContainer.viewContext)!
+    }
+    
     internal lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

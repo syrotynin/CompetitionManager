@@ -13,10 +13,7 @@ extension CoreDataManager {
     
     func addParticipant(name: String, photoURL: String? = nil, success: (Participant) -> (), failed: (NSError) -> ()) {
         let context = persistentContainer.viewContext
-        guard let entity = NSEntityDescription.entity(forEntityName: Participant.className, in: context) else {
-            failed(NSError.noEntity)
-            return
-        }
+        let entity = CoreDataManager.shared.entityForName(entityName: Participant.className)
         
         let user = Participant(entity: entity, insertInto: context)
         user.name = name
@@ -32,9 +29,18 @@ extension CoreDataManager {
         }
     }
     
-    func allUsers(success: ([Participant]) -> (), failed: (NSError?) -> ()) {
+    func allUsers(success: ([Participant]) -> (), failed: (NSError) -> ()) {
+        fetchUsers("", success: success, failed: failed)
+    }
+    
+    func fetchUsers(_ searchString: String, success: ([Participant]) -> (), failed: (NSError) -> ()) {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Participant>(entityName: Participant.className)
+        
+        let text = searchString.trimmingCharacters(in: .whitespacesAndNewlines)
+        if text.characters.count > 0 {
+            fetchRequest.predicate = NSPredicate(format: "name beginswith[c] %@", text)
+        }
         
         do {
             let people = try context.fetch(fetchRequest)
