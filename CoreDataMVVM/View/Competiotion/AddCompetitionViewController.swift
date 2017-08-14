@@ -10,26 +10,32 @@ import UIKit
 
 class AddCompetitionViewController: UIViewController {
 
+    @IBOutlet weak var competitionName: UITextField!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var selectImageButton: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var tableView: UITableView!
+    
+    static let cellId = "CompCell"
+    let viewModel = CompetitionViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // Register the table view cell class and its reuse id
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: AddCompetitionViewController.cellId)
+        
+        //---//
+        bindViewModel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func bindViewModel() {
+        viewModel.title.bidirectionalBind(to: competitionName.reactive.text)
     }
-    */
-
+    
+    // MARK: Actions
+    
+    @IBAction func imageClicked(_ sender: Any) {
+        print("Select Image")
+    }
 }

@@ -75,7 +75,7 @@
                     <navigationItem key="navigationItem" id="gWu-8Q-jpw">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wfv-5O-yGq">
                             <connections>
-                                <segue destination="DOt-fk-exy" kind="show" id="GIb-wQ-aEG"/>
+                                <segue destination="4ny-O8-9Do" kind="show" id="OGL-MJ-OID"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,11 +188,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select participants" id="HJy-9D-ild">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="LeJ-VX-s1w">
-                            <connections>
-                                <segue destination="4ny-O8-9Do" kind="show" id="4Su-j5-KGW"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="LeJ-VX-s1w"/>
                     </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="LeJ-VX-s1w" id="69H-do-o6Y"/>
@@ -204,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUt-cN-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="-561.76911544227892"/>
+            <point key="canvasLocation" x="2742" y="-561"/>
         </scene>
         <!--New Competition-->
         <scene sceneID="mXo-JW-zZ0">
@@ -225,24 +221,27 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9QF-tJ-CO1">
-                                                <rect key="frame" x="20" y="140" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="120" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W0t-BM-Gr8">
-                                                <rect key="frame" x="0.0" y="190" width="375" height="413"/>
+                                                <rect key="frame" x="0.0" y="170" width="375" height="433"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="74r-Nz-85o">
-                                                <rect key="frame" x="147.5" y="20" width="80" height="80"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="competitionPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="74r-Nz-85o">
+                                                <rect key="frame" x="157.5" y="20" width="60" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="orP-5Y-DO2"/>
+                                                    <constraint firstAttribute="width" constant="60" id="orP-5Y-DO2"/>
                                                     <constraint firstAttribute="width" secondItem="74r-Nz-85o" secondAttribute="height" multiplier="1:1" id="piP-f7-KpA"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-Mu-X4u">
-                                                <rect key="frame" x="147" y="20" width="80" height="80"/>
+                                                <rect key="frame" x="157" y="20" width="60" height="60"/>
+                                                <connections>
+                                                    <action selector="imageClicked:" destination="4ny-O8-9Do" eventType="touchUpInside" id="sRd-LI-ZiC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -286,12 +285,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Competition" id="c0a-GW-sq9">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ppF-Tx-te6"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ppF-Tx-te6">
+                            <connections>
+                                <segue destination="DOt-fk-exy" kind="show" id="rV7-1R-dCg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="competitionName" destination="9QF-tJ-CO1" id="LVQ-hs-Xdm"/>
+                        <outlet property="doneButton" destination="ppF-Tx-te6" id="XvM-yW-PC5"/>
+                        <outlet property="image" destination="74r-Nz-85o" id="UzF-e1-ehn"/>
+                        <outlet property="selectImageButton" destination="Dhk-Mu-X4u" id="lK8-Do-KqN"/>
+                        <outlet property="tableView" destination="W0t-BM-Gr8" id="5S9-VP-1Co"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxC-qa-g3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2784.8000000000002" y="-562.66866566716647"/>
+            <point key="canvasLocation" x="1898" y="-562"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R7y-nu-kM4">
@@ -314,6 +324,7 @@
     </scenes>
     <resources>
         <image name="checked" width="40" height="40"/>
+        <image name="competitionPlaceholder" width="50" height="50"/>
         <image name="userDefault" width="50" height="50"/>
     </resources>
 </document>
