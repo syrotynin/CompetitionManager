@@ -15,6 +15,7 @@ class ParticipantsViewModel {
     let searchString = Observable<String?>("")
     let validSelection = Observable<Bool>(false)
     let searchResults = MutableObservableArray<Participant>([])
+    let selectedParticipants = MutableObservableArray<Participant>([])
     let errorMessages = PublishSubject<String, NoError>()
     
     init() {
@@ -37,5 +38,18 @@ class ParticipantsViewModel {
         }) { (error) in
             self.errorMessages.next(error.localizedDescription)
         }
+    }
+    
+    func selected(_ row: Int) {
+        let participant = searchResults[row]
+        if isSelected(participant) {
+            selectedParticipants.remove(at: selectedParticipants.index(of: participant) ?? 0)
+        } else {
+            selectedParticipants.append(participant)
+        }
+    }
+    
+    func isSelected(_ participant: Participant) -> Bool {
+        return selectedParticipants.contains(participant)
     }
 }

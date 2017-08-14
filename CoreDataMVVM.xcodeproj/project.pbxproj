@@ -32,6 +32,7 @@
 		E83978C21F1925CD00A2E4DC /* CoreDataManager+Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978C11F1925CD00A2E4DC /* CoreDataManager+Participant.swift */; };
 		E83978C51F192D1B00A2E4DC /* ParticipantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978C41F192D1B00A2E4DC /* ParticipantsViewModel.swift */; };
 		E89147541F3E157900A7E717 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89147531F3E157900A7E717 /* UserTableViewCell.swift */; };
+		E8930B8E1F41CF2800CE0105 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930B8D1F41CF2800CE0105 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E83978C11F1925CD00A2E4DC /* CoreDataManager+Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Participant.swift"; sourceTree = "<group>"; };
 		E83978C41F192D1B00A2E4DC /* ParticipantsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsViewModel.swift; sourceTree = "<group>"; };
 		E89147531F3E157900A7E717 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		E8930B8D1F41CF2800CE0105 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		F7FE232FFE91925AFE875901 /* Pods-CoreDataMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataMVVM/Pods-CoreDataMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 			children = (
 				E83978BD1F191E2E00A2E4DC /* NSObject+Extensions.swift */,
 				E83978BF1F19240D00A2E4DC /* NSError+Extensions.swift */,
+				E8930B8D1F41CF2800CE0105 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				E83978A51F1907A500A2E4DC /* Competition+CoreDataProperties.swift in Sources */,
 				E83978541F18FB3200A2E4DC /* CompetitionTableViewCell.swift in Sources */,
 				E83978A81F1907A500A2E4DC /* Team+CoreDataClass.swift in Sources */,
+				E8930B8E1F41CF2800CE0105 /* UITableView+Extension.swift in Sources */,
 				E83978A61F1907A500A2E4DC /* Participant+CoreDataClass.swift in Sources */,
 				E83978AF1F190C5800A2E4DC /* CompetitionsViewController.swift in Sources */,
 				E83978C01F19240D00A2E4DC /* NSError+Extensions.swift in Sources */,

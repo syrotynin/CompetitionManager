@@ -12,10 +12,12 @@ class UserTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var checkImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        checkImage.alpha = 0.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
