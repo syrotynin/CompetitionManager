@@ -65,10 +65,19 @@ class AddCompetitionViewController: UIViewController {
         }.dispose(in: bag)
     }
     
-    // MARK: Actions
+    // MARK: - Actions
     
     @IBAction func imageClicked(_ sender: Any) {
         print("Select Image")
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.selectParticipants,
+            let vc = segue.destination as? ParticipantsViewController {
+            
+        }
     }
 }
 

@@ -347,7 +347,7 @@
                     <navigationItem key="navigationItem" title="New Competition" id="c0a-GW-sq9">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ppF-Tx-te6">
                             <connections>
-                                <segue destination="DOt-fk-exy" kind="show" id="rV7-1R-dCg"/>
+                                <segue destination="DOt-fk-exy" kind="show" identifier="selectParticipants" id="rV7-1R-dCg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
