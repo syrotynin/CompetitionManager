@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum CompetitionType: String {
     case grid = "Grid (against all with points)"
@@ -14,5 +15,14 @@ enum CompetitionType: String {
     
     public static var all: [CompetitionType] {
         return [.grid, .elimination]
+    }
+    
+    var image: UIImage {
+        switch self {
+        case .grid:
+            return #imageLiteral(resourceName: "grid")
+        case .elimination:
+            return #imageLiteral(resourceName: "elimination")
+        }
     }
 }

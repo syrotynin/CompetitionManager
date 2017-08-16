@@ -13,5 +13,24 @@ import ReactiveKit
 class CompetitionViewModel {
     
     let title = Observable<String?>("")
-    let type = Observable<CompetitionType>(.grid)
+    let competitionTypes = ObservableArray<CompetitionType>(CompetitionType.all)
+    var selectedType = CompetitionType.grid
+    var expandedRows: [Int] = []
+    
+    func isSelected(_ type: CompetitionType) -> Bool {
+        return selectedType == type
+    }
+    
+    func selectType(_ row: Int) {
+        selectedType = competitionTypes[row]
+    }
+    
+    func trigger(_ row: Int) {
+        if expandedRows.contains(row) {
+            expandedRows.remove(at: expandedRows.index(of: row) ?? 0)
+        }
+        else {
+            expandedRows.append(row)
+        }
+    }
 }

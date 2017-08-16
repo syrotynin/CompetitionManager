@@ -34,12 +34,10 @@ class ParticipantsViewController: UIViewController {
             let participant = dataSource[indexPath.row]
             cell.name.text = participant.name
             
-            DispatchQueue.main.async() {
-                UIView.animate(withDuration: 0.5, animations: {
-                    let alpha: CGFloat = self.viewModel.isSelected(participant) ? 1.0 : 0.0
-                    cell.checkImage.alpha = alpha
-                })
-            }
+            let selected = self.viewModel.isSelected(participant)
+            let check: String = selected ? "  ✔︎" : ""
+            cell.name.text = participant.name + check
+            cell.name.font = selected ? UIFont.boldSystemFont(ofSize: 20.0) : UIFont.systemFont(ofSize: 18.0)
             
             if let photo = participant.photoURL, let url = URL(string: photo) {
                 cell.photo.af_setImage(withURL: url)

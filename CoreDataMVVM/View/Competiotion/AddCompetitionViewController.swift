@@ -16,14 +16,16 @@ class AddCompetitionViewController: UIViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
-    static let cellId = "CompCell"
     let viewModel = CompetitionViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Register the table view cell class and its reuse id
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: AddCompetitionViewController.cellId)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = CompTypeTableViewCell.closedHeight
+        
+        // remove empty cells
+        tableView.tableFooterView = UIView()
         
         //---//
         bindViewModel()
@@ -31,11 +33,50 @@ class AddCompetitionViewController: UIViewController {
     
     func bindViewModel() {
         viewModel.title.bidirectionalBind(to: competitionName.reactive.text)
+        viewModel.title.map({
+            let string = $0?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            return string.characters.count > 0
+            })
+            .bind(to: doneButton.reactive.isEnabled)
+        
+        viewModel.competitionTypes.bind(to: tableView) { dataSource, indexPath, tableView in
+            let cell = tableView.dequeueReusableCell(withIdentifier: CompTypeTableViewCell.identifier, for: indexPath) as! CompTypeTableViewCell
+            cell.delegate = self
+            cell.selectionStyle = .none
+            
+            let competitionType = dataSource[indexPath.row]
+            let selected = self.viewModel.isSelected(competitionType)
+            
+            let check: String = selected ? "  ✔︎" : ""
+            cell.name.text = competitionType.rawValue + check
+            cell.name.font = selected ? UIFont.boldSystemFont(ofSize: 18.0) : UIFont.systemFont(ofSize: 16.0)
+            
+            let expanded = self.viewModel.expandedRows.contains(indexPath.row)
+            cell.expand(expanded, type: competitionType)
+            
+            return cell
+        }
+        
+        // cell did selected
+        tableView.selectedRow.observeNext { row in
+            print("Selected row at index \(row).")
+            self.viewModel.selectType(row)
+            self.tableView.reloadData()
+        }.dispose(in: bag)
     }
     
     // MARK: Actions
     
     @IBAction func imageClicked(_ sender: Any) {
         print("Select Image")
+    }
+}
+
+extension AddCompetitionViewController: CompTypeDelegate {
+    func infoClicked(cell: CompTypeTableViewCell) {
+        if let ip = tableView.indexPath(for: cell) {
+            viewModel.trigger(ip.row)
+            self.tableView.reloadData()
+        }
     }
 }
