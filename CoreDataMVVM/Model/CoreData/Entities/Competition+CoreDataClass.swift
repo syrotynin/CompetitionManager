@@ -2,7 +2,7 @@
 //  Competition+CoreDataClass.swift
 //  
 //
-//  Created by Serhii Syrotynin on 7/14/17.
+//  Created by Serhii Syrotynin on 8/17/17.
 //
 //
 

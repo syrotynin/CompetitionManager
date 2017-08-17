@@ -10,4 +10,5 @@ import Foundation
 
 struct Segue {
     static let selectParticipants = "selectParticipants"
+    static let unwindToCompetiotions = "unwindToCompetiotions"
 }

@@ -77,4 +77,10 @@ class ParticipantsViewController: UIViewController {
             alertController.addAction(actionOk)
         }
     }
+    
+    // MARK: Actions
+    @IBAction func doneClicked(_ sender: Any) {
+        
+        performSegue(withIdentifier: Segue.unwindToCompetiotions, sender: self)
+    }
 }

@@ -17,8 +17,6 @@
 		E839784E1F18F7A300A2E4DC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839784B1F18F7A300A2E4DC /* CoreDataManager.swift */; };
 		E839784F1F18F7A300A2E4DC /* CoreDataMVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E839784C1F18F7A300A2E4DC /* CoreDataMVVM.xcdatamodeld */; };
 		E83978541F18FB3200A2E4DC /* CompetitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978531F18FB3200A2E4DC /* CompetitionTableViewCell.swift */; };
-		E83978A41F1907A500A2E4DC /* Competition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839789E1F1907A500A2E4DC /* Competition+CoreDataClass.swift */; };
-		E83978A51F1907A500A2E4DC /* Competition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839789F1F1907A500A2E4DC /* Competition+CoreDataProperties.swift */; };
 		E83978A61F1907A500A2E4DC /* Participant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978A01F1907A500A2E4DC /* Participant+CoreDataClass.swift */; };
 		E83978A71F1907A500A2E4DC /* Participant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978A11F1907A500A2E4DC /* Participant+CoreDataProperties.swift */; };
 		E83978A81F1907A500A2E4DC /* Team+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83978A21F1907A500A2E4DC /* Team+CoreDataClass.swift */; };
@@ -37,6 +35,8 @@
 		E8930B921F4207B200CE0105 /* CompetitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930B911F4207B200CE0105 /* CompetitionType.swift */; };
 		E8BAAB031F44827B002E85E9 /* CompTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAAB021F44827B002E85E9 /* CompTypeTableViewCell.swift */; };
 		E8BAAB051F44A410002E85E9 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAAB041F44A410002E85E9 /* Segue.swift */; };
+		E8BADC901F459873003803D5 /* Competition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BADC8E1F459873003803D5 /* Competition+CoreDataClass.swift */; };
+		E8BADC911F459873003803D5 /* Competition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BADC8F1F459873003803D5 /* Competition+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +52,6 @@
 		E839784B1F18F7A300A2E4DC /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E839784D1F18F7A300A2E4DC /* CoreDataMVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataMVVM.xcdatamodel; sourceTree = "<group>"; };
 		E83978531F18FB3200A2E4DC /* CompetitionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionTableViewCell.swift; sourceTree = "<group>"; };
-		E839789E1F1907A500A2E4DC /* Competition+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Competition+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E839789F1F1907A500A2E4DC /* Competition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Competition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E83978A01F1907A500A2E4DC /* Participant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Participant+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E83978A11F1907A500A2E4DC /* Participant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Participant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E83978A21F1907A500A2E4DC /* Team+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		E8BAAB021F44827B002E85E9 /* CompTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompTypeTableViewCell.swift; sourceTree = "<group>"; };
 		E8BAAB041F44A410002E85E9 /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		E8BAAB081F44AD66002E85E9 /* CoreDataMVVM v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CoreDataMVVM v2.xcdatamodel"; sourceTree = "<group>"; };
+		E8BADC8E1F459873003803D5 /* Competition+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Competition+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E8BADC8F1F459873003803D5 /* Competition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Competition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F7FE232FFE91925AFE875901 /* Pods-CoreDataMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataMVVM/Pods-CoreDataMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,8 +206,8 @@
 		E839789D1F1907A500A2E4DC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E839789E1F1907A500A2E4DC /* Competition+CoreDataClass.swift */,
-				E839789F1F1907A500A2E4DC /* Competition+CoreDataProperties.swift */,
+				E8BADC8E1F459873003803D5 /* Competition+CoreDataClass.swift */,
+				E8BADC8F1F459873003803D5 /* Competition+CoreDataProperties.swift */,
 				E83978A01F1907A500A2E4DC /* Participant+CoreDataClass.swift */,
 				E83978A11F1907A500A2E4DC /* Participant+CoreDataProperties.swift */,
 				E83978A21F1907A500A2E4DC /* Team+CoreDataClass.swift */,
@@ -395,20 +395,20 @@
 				E83978B91F191A3000A2E4DC /* CoreDataManager+Competition.swift in Sources */,
 				E83978B21F190CF300A2E4DC /* AddCompetitionViewController.swift in Sources */,
 				E83978B01F190C5800A2E4DC /* ParticipantsViewController.swift in Sources */,
-				E83978A51F1907A500A2E4DC /* Competition+CoreDataProperties.swift in Sources */,
 				E83978541F18FB3200A2E4DC /* CompetitionTableViewCell.swift in Sources */,
 				E8BAAB051F44A410002E85E9 /* Segue.swift in Sources */,
 				E83978A81F1907A500A2E4DC /* Team+CoreDataClass.swift in Sources */,
+				E8BADC901F459873003803D5 /* Competition+CoreDataClass.swift in Sources */,
 				E8930B8E1F41CF2800CE0105 /* UITableView+Extension.swift in Sources */,
 				E8930B921F4207B200CE0105 /* CompetitionType.swift in Sources */,
 				E83978A61F1907A500A2E4DC /* Participant+CoreDataClass.swift in Sources */,
 				E83978AF1F190C5800A2E4DC /* CompetitionsViewController.swift in Sources */,
+				E8BADC911F459873003803D5 /* Competition+CoreDataProperties.swift in Sources */,
 				E83978C01F19240D00A2E4DC /* NSError+Extensions.swift in Sources */,
 				E8BAAB031F44827B002E85E9 /* CompTypeTableViewCell.swift in Sources */,
 				E83978C51F192D1B00A2E4DC /* ParticipantsViewModel.swift in Sources */,
 				E83978C21F1925CD00A2E4DC /* CoreDataManager+Participant.swift in Sources */,
 				E89147541F3E157900A7E717 /* UserTableViewCell.swift in Sources */,
-				E83978A41F1907A500A2E4DC /* Competition+CoreDataClass.swift in Sources */,
 				E83978A71F1907A500A2E4DC /* Participant+CoreDataProperties.swift in Sources */,
 				E83978A91F1907A500A2E4DC /* Team+CoreDataProperties.swift in Sources */,
 				E839784E1F18F7A300A2E4DC /* CoreDataManager.swift in Sources */,

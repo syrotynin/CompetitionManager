@@ -2,7 +2,7 @@
 //  Competition+CoreDataProperties.swift
 //  
 //
-//  Created by Serhii Syrotynin on 7/14/17.
+//  Created by Serhii Syrotynin on 8/17/17.
 //
 //
 
@@ -17,7 +17,8 @@ extension Competition {
     }
 
     @NSManaged public var imageURL: String?
-    @NSManaged public var name: String
+    @NSManaged public var name: String?
+    @NSManaged public var type: Int16
     @NSManaged public var participants: NSSet?
     @NSManaged public var teams: NSSet?
 

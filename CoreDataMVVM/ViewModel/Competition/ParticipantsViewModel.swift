@@ -12,6 +12,8 @@ import ReactiveKit
 
 class ParticipantsViewModel {
     
+    var competition: Competition?
+    
     let searchString = Observable<String?>("")
     let validSelection = Observable<Bool>(false)
     let searchResults = MutableObservableArray<Participant>([])
@@ -51,5 +53,15 @@ class ParticipantsViewModel {
     
     func isSelected(_ participant: Participant) -> Bool {
         return selectedParticipants.contains(participant)
+    }
+    
+    func updateCompetition(_ completion: @escaping ()->()) {
+        if let competition = competition {
+            CoreDataManager.shared.updateCompetition(competition: competition, participants: NSSet(array: selectedParticipants.array), success: { (competition) in
+                completion()
+            }) { (error) in
+                self.errorMessages.next(error.localizedDescription)
+            }
+        }
     }
 }

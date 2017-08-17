@@ -48,7 +48,7 @@ class AddCompetitionViewController: UIViewController {
             let selected = self.viewModel.isSelected(competitionType)
             
             let check: String = selected ? "  ✔︎" : ""
-            cell.name.text = competitionType.rawValue + check
+            cell.name.text = competitionType.description + check
             cell.name.font = selected ? UIFont.boldSystemFont(ofSize: 18.0) : UIFont.systemFont(ofSize: 16.0)
             
             let expanded = self.viewModel.expandedRows.contains(indexPath.row)
@@ -71,12 +71,26 @@ class AddCompetitionViewController: UIViewController {
         print("Select Image")
     }
     
+    @IBAction func doneClicked(_ sender: Any) {
+        CoreDataManager.shared.addCompetition(name: competitionName.text ?? "", success: { (competition) in
+            performSegue(withIdentifier: Segue.selectParticipants, sender: competition)
+        }) { (error) in
+            let alertController = UIAlertController(title: "Something went wrong :-(", message: error.localizedDescription, preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            let actionOk = UIAlertAction(title: "OK", style: .default,
+                                         handler: { action in alertController.dismiss(animated: true, completion: nil) })
+            
+            alertController.addAction(actionOk)
+        }
+    }
+    
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.selectParticipants,
-            let vc = segue.destination as? ParticipantsViewController {
-            
+            let vc = segue.destination as? ParticipantsViewController,
+            let competition = sender as? Competition {
+            vc.viewModel.competition = competition
         }
     }
 }

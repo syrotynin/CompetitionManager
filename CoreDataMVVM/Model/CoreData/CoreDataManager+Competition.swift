@@ -11,7 +11,7 @@ import CoreData
 
 extension CoreDataManager {
     
-    func addCompetition(name: String, participants: NSSet? = nil, imageURL: String? = nil, success: (Competition) -> (), failed: (NSError) -> ()) {
+    func addCompetition(name: String, type: Int16 = 0, participants: NSSet? = nil, imageURL: String? = nil, success: (Competition) -> (), failed: (NSError) -> ()) {
         let context = persistentContainer.viewContext
         let entity = CoreDataManager.shared.entityForName(entityName: Competition.className)
         
@@ -19,6 +19,33 @@ extension CoreDataManager {
         competition.name = name
         competition.imageURL = imageURL
         competition.participants = participants
+        competition.type = type
+        
+        do {
+            try context.save()
+            success(competition)
+        }
+        catch let error as NSError {
+            context.delete(competition)
+            failed(error)
+        }
+    }
+    
+    func updateCompetition(competition: Competition, name: String? = nil, type: Int16? = nil, participants: NSSet? = nil, imageURL: String? = nil, success: (Competition) -> (), failed: (NSError) -> ()) {
+        let context = persistentContainer.viewContext
+        
+        if let name = name {
+            competition.name = name
+        }
+        if let type = type {
+            competition.type = type
+        }
+        if let participants = participants {
+            competition.participants = participants
+        }
+        if let imageURL = imageURL {
+            competition.imageURL = imageURL
+        }
         
         do {
             try context.save()

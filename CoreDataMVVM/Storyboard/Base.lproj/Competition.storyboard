@@ -188,7 +188,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select participants" id="HJy-9D-ild">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="LeJ-VX-s1w"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="LeJ-VX-s1w">
+                            <connections>
+                                <action selector="doneClicked:" destination="DOt-fk-exy" id="8l3-d5-eqo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="LeJ-VX-s1w" id="69H-do-o6Y"/>
@@ -196,11 +200,13 @@
                         <outlet property="searchField" destination="F2n-In-RdG" id="pyv-fr-JDb"/>
                         <outlet property="selectedNames" destination="i06-wE-vWI" id="enI-u3-XE6"/>
                         <outlet property="tableView" destination="Vxl-cD-ccl" id="vO0-jw-OuX"/>
+                        <segue destination="ym7-LH-SEe" kind="unwind" identifier="unwindToCompetiotions" unwindAction="prepareForUnwind:" id="SKa-4B-lsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUt-cN-AgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ym7-LH-SEe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2742" y="-561"/>
+            <point key="canvasLocation" x="2743" y="-561"/>
         </scene>
         <!--New Competition-->
         <scene sceneID="mXo-JW-zZ0">
@@ -347,7 +353,7 @@
                     <navigationItem key="navigationItem" title="New Competition" id="c0a-GW-sq9">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ppF-Tx-te6">
                             <connections>
-                                <segue destination="DOt-fk-exy" kind="show" identifier="selectParticipants" id="rV7-1R-dCg"/>
+                                <action selector="doneClicked:" destination="4ny-O8-9Do" id="hbi-iK-cff"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -357,6 +363,7 @@
                         <outlet property="image" destination="74r-Nz-85o" id="UzF-e1-ehn"/>
                         <outlet property="selectImageButton" destination="Dhk-Mu-X4u" id="lK8-Do-KqN"/>
                         <outlet property="tableView" destination="W0t-BM-Gr8" id="5S9-VP-1Co"/>
+                        <segue destination="DOt-fk-exy" kind="show" identifier="selectParticipants" id="MSF-Dz-VWB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxC-qa-g3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
